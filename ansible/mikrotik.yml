@@ -1,4 +1,4 @@
-- name: Mikrotik setup default security rules
+- name: Mikrotik sync
   gather_facts: no
   hosts: localhost
   vars:
