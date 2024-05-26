@@ -1,0 +1,2 @@
+[docker]
+docker1.hl.vs ansible_user=root
