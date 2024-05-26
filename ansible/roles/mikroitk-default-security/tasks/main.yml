@@ -1,8 +1,8 @@
 - block:
-#    - include_tasks: disable-ipv6.yml
-#      loop: "{{ MIKROTIK_HOSTS }}"
-#    - include_tasks: disable-mac-server.yml
-#      loop: "{{ MIKROTIK_HOSTS }}"
+    - include_tasks: disable-ipv6.yml
+      loop: "{{ MIKROTIK_HOSTS }}"
+    - include_tasks: disable-mac-server.yml
+      loop: "{{ MIKROTIK_HOSTS }}"
     - include_tasks: disable-services.yml
       loop: "{{ MIKROTIK_HOSTS }}"
   module_defaults:
