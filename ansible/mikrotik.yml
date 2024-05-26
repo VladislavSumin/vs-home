@@ -5,8 +5,14 @@
     MIKROTIK_HOSTS:
       - "sw1.home2.vs"
       - "172.16.30.1"
+    MIKROTIK_DNS:
+      - name: "sw1.home2.vs"
+        address: "10.29.0.1"
+      - name: "sw1.hl.vs"
+        address: "10.30.10.1"
   vars_prompt:
     - name: MIKROTIK_PASSWORD
       private: true
   roles:
     - mikroitk-default-security
+    - mikroitk-dns-sync

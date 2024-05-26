@@ -1,0 +1,5 @@
+---
+- name: "{{ item }}: Sync DNS"
+  community.routeros.api_modify:
+    path: "ip dns static"
+    data: "{{ MIKROTIK_DNS }}"
