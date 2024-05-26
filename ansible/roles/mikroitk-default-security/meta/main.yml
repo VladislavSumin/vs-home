@@ -1,0 +1,6 @@
+galaxy_info:
+  author: Vladislav Sumin
+  description: Setup dns static records for mikrotik
+  min_ansible_version: 2.1
+  galaxy_tags: [mikrotik]
+dependencies: []

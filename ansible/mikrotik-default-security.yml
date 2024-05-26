@@ -1,0 +1,12 @@
+- name: Mikrotik setup default security rules
+  gather_facts: no
+  hosts: localhost
+  vars:
+    MIKROTIK_HOSTS:
+      - "sw1.home2.vs"
+      - "172.16.30.1"
+  vars_prompt:
+    - name: MIKROTIK_PASSWORD
+      private: true
+  roles:
+    - mikroitk-default-security
