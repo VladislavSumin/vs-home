@@ -44,13 +44,14 @@
     - mikrotik-default-security
     - mikrotik-dns-sync
 
-## Синхронизируем настройки микротиков участвующих в OSPF маршрутизации
-#- name: Mikrotik OSPF
-#  gather_facts: no
-#  hosts: localhost
-#  vars:
-#    MIKROTIK_HOSTS:
-#      - "sw1.home2.vs"
+# Синхронизируем настройки микротиков участвующих в OSPF маршрутизации
+- name: Mikrotik OSPF
+  gather_facts: no
+  hosts: localhost
+  vars:
+    MIKROTIK_SETTINGS:
+      - host: "sw1.home2.vs"
+        ospf_id: "172.16.29.255"
 #      - "sw1.hl.vs"
-#  roles:
-#    - mikroitk-default-ospf
+  roles:
+    - mikrotik-default-ospf

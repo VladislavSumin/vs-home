@@ -1,0 +1,10 @@
+---
+- name: "{{ item.host }}: Setup OSPF instance"
+  community.routeros.api_modify:
+    path: "routing ospf instance"
+    handle_absent_entries: "remove"
+    handle_entries_content: "remove"
+    data:
+      - name: "default"
+        redistribute: "connected"
+        router-id: "{{ item.ospf_id }}"
