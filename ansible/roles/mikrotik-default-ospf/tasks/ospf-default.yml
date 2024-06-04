@@ -1,4 +1,17 @@
 ---
+
+# Настраиваем фильтрацию маршрутов
+- name: "{{ item.host }}: Setup OSPF filter"
+  community.routeros.api_modify:
+    path: "routing filter rule"
+    handle_absent_entries: "remove"
+    handle_entries_content: "remove"
+    data:
+      - chain: "ospf-in"
+        rule: "if (dst in 10.0.0.0/8) { accept } reject"
+      - chain: "ospf-out"
+        rule: "if (dst in 10.0.0.0/8) { accept } reject"
+
 - name: "{{ item.host }}: Setup OSPF instance"
   community.routeros.api_modify:
     path: "routing ospf instance"
@@ -8,6 +21,8 @@
       - name: "default"
         redistribute: "connected"
         router-id: "{{ item.ospf_id }}"
+        in-filter-chain: "ospf-in"
+        out-filter-chain: "ospf-out"
 
 - name: "{{ item.host }}: Setup OSPF backbone area"
   community.routeros.api_modify:
