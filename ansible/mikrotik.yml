@@ -1,11 +1,12 @@
 # Сохраняем пароль от микротиков в локальную переменную на localhost
-- name: Set mikrotik password
+- name: Set mikrotik username && password
   hosts: localhost
   vars_prompt:
     - name: MIKROTIK_PASSWORD
       private: true
   tasks:
     - set_fact:
+        MIKROTIK_USERNAME: "admin"
         MIKROTIK_PASSWORD: "{{ MIKROTIK_PASSWORD }}"
 
 # Синхронизируем стандартные для всех микротиков настройки
