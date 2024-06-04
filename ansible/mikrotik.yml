@@ -1,4 +1,15 @@
-- name: Mikrotik sync
+# Сохраняем пароль от микротиков в локальную переменную на localhost
+- name: Set mikrotik password
+  hosts: localhost
+  vars_prompt:
+    - name: MIKROTIK_PASSWORD
+      private: true
+  tasks:
+    - set_fact:
+        MIKROTIK_PASSWORD: "{{ MIKROTIK_PASSWORD }}"
+
+# Синхронизируем стандартные для всех микротиков настройки
+- name: Mikrotik default
   gather_facts: no
   hosts: localhost
   vars:
@@ -28,9 +39,17 @@
         address: "10.10.5.5"
       - name: "lift.cams.home1.vs"
         address: "10.10.2.2"
-  vars_prompt:
-    - name: MIKROTIK_PASSWORD
-      private: true
   roles:
     - mikroitk-default-security
     - mikroitk-dns-sync
+
+## Синхронизируем настройки микротиков участвующих в OSPF маршрутизации
+#- name: Mikrotik OSPF
+#  gather_facts: no
+#  hosts: localhost
+#  vars:
+#    MIKROTIK_HOSTS:
+#      - "sw1.home2.vs"
+#      - "sw1.hl.vs"
+#  roles:
+#    - mikroitk-default-ospf
