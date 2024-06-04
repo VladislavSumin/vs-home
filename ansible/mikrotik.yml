@@ -52,6 +52,7 @@
     MIKROTIK_SETTINGS:
       - host: "sw1.home2.vs"
         ospf_id: "172.16.29.255"
-#      - "sw1.hl.vs"
+      - host: "sw1.hl.vs"
+        ospf_id: "172.16.30.255"
   roles:
     - mikrotik-default-ospf
