@@ -8,3 +8,12 @@
       - name: "default"
         redistribute: "connected"
         router-id: "{{ item.ospf_id }}"
+
+- name: "{{ item.host }}: Setup OSPF backbone area"
+  community.routeros.api_modify:
+    path: "routing ospf area"
+    handle_absent_entries: "remove"
+    handle_entries_content: "remove"
+    data:
+      - name: "backbone"
+        instance: "default"
