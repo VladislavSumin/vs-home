@@ -40,8 +40,8 @@
       - name: "lift.cams.home1.vs"
         address: "10.10.2.2"
   roles:
-    - mikroitk-default-security
-    - mikroitk-dns-sync
+    - mikrotik-default-security
+    - mikrotik-dns-sync
 
 ## Синхронизируем настройки микротиков участвующих в OSPF маршрутизации
 #- name: Mikrotik OSPF
