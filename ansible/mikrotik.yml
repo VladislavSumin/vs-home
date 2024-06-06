@@ -22,8 +22,15 @@
       - "sw1.dacha.vs"
       - "ap1.dacha.vs"
     MIKROTIK_DNS:
+      # 27 сеть dacha
+      - name: "pve1.dacha.vs"
+        address: "10.27.10.10"
+
+      # 29 сеть home2
       - name: "sw1.home2.vs"
         address: "10.29.0.1"
+
+      # 30 сеть hl
       - name: "sw1.hl.vs"
         address: "10.30.10.1"
       - name: "pve1.hl.vs"
