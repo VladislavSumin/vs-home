@@ -17,6 +17,9 @@
     MIKROTIK_HOSTS:
       - "sw1.home2.vs"
       - "sw1.hl.vs"
+
+      # Old network routers
+      - "ap1.dacha.vs"
     MIKROTIK_DNS:
       - name: "sw1.home2.vs"
         address: "10.29.0.1"
@@ -30,6 +33,18 @@
         address: "10.30.11.11"
 
       # Old network settings
+      - name: "sw1.home.vs"
+        address: "10.0.0.1"
+      - name: "sw1.dacha.vs"
+        address: "10.0.1.1"
+      - name: "ap1.dacha.vs"
+        address: "10.0.1.2"
+
+      # Old network hosts
+      - name: "ha.home.vs"
+        address: "10.100.0.11"
+
+      # Old network cams settings
       - name: "veranda.cams.dacha.vs"
         address: "10.10.5.2"
       - name: "mangal.cams.dacha.vs"
