@@ -19,6 +19,7 @@
       - "sw1.hl.vs"
 
       # Old network routers
+      - "sw1.dacha.vs"
       - "ap1.dacha.vs"
     MIKROTIK_DNS:
       - name: "sw1.home2.vs"
