@@ -22,6 +22,12 @@
       - "sw1.dacha.vs"
       - "ap1.dacha.vs"
     MIKROTIK_DNS:
+      # Памятка по названиям сетей:
+      # 27 сеть dacha
+      # 28 сеть home
+      # 29 сеть home2
+      # 30 сеть hl
+
       # 27 сеть dacha
       - name: "pve1.dacha.vs"
         address: "10.27.10.10"
@@ -63,11 +69,12 @@
         address: "10.10.5.4"
       - name: "tualet.cams.dacha.vs"
         address: "10.10.5.5"
-      - name: "lift.cams.home1.vs"
+      - name: "lift.cams.home.vs"
         address: "10.10.2.2"
   roles:
     - mikrotik-default-security
     - mikrotik-dns-sync
+    - mikrotik-identity
 
 # Синхронизируем настройки микротиков участвующих в OSPF маршрутизации
 - name: Mikrotik OSPF
